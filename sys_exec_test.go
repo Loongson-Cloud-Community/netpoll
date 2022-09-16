@@ -21,6 +21,7 @@ import (
 	"math"
 	"syscall"
 	"testing"
+	"time"
 )
 
 func TestIovecs(t *testing.T) {
@@ -269,6 +270,8 @@ func BenchmarkReadv(b *testing.B) {
 		}
 
 	}()
+
+	time.Sleep(time.Millisecond * 5)
 
 	// benchmark
 	b.ReportAllocs()
